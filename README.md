@@ -25,7 +25,17 @@ $ git add .
 $ git commit -a -m "ionic start Ionic2Do blank"
 $ git push origin master
 
-$ git tag -a s1_ionic_start -m "ionic start Ionic2Do blank" HEAD
+$ git tag -a s1_ionic_start -m "ionic start ..." HEAD
 $ git push origin tag s1_ionic_start
 ```
 
+*s2_tasklist
+
+```bash
+rename home to tasklist
+edit tasklist.html, add button and list
+implement tasklist control
+
+$ git tag -a s2_tasklist -m "tasklist" HEAD
+$ git push origin tag s2_tasklist
+```

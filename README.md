@@ -12,3 +12,20 @@ $ cd Ionic2Do
 ```
 
 Once you have created the starter Ionic application using the steps above, download this repo and copy over the src and www directories into the newly created folder, replacing the initial src and www directory. You will still need to follow any additional steps in the book.
+
+*s1_ionic_start
+
+```bash
+$ git remote add origin https://github.com/yuqi-code/Ionic2Do
+$ git checkout master
+(—save copy)
+$ git pull origin master --allow-unrelated-histories
+(—restore copy)
+$ git add .
+$ git commit -a -m "ionic start Ionic2Do blank"
+$ git push origin master
+
+$ git tag -a s1_ionic_start -m "ionic start Ionic2Do blank" HEAD
+$ git push origin tag s1_ionic_start
+```
+

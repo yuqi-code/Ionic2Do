@@ -39,3 +39,10 @@ implement tasklist control
 $ git tag -a s2_tasklist -m "tasklist" HEAD
 $ git push origin tag s2_tasklist
 ```
+
+*s3_tasklist_slidingItem
+
+```bash
+$ git tag -a s3_tasklist_slidingItem -m "tasklist slidingItem" HEAD
+$ git push origin tag s3_tasklist_slidingItem
+```

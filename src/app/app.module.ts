@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { TaskListPage } from '../pages/tasklist/tasklist';
+import {Dialogs} from "@ionic-native/dialogs";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TaskListPage } from '../pages/tasklist/tasklist';
   providers: [
     StatusBar,
     SplashScreen,
+    Dialogs,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

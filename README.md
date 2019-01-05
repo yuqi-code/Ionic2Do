@@ -43,8 +43,11 @@ $ git push origin tag s2_tasklist
 *s3_tasklist_slidingItem
 
 ```bash
-update tasklist, add slidingItem
+update tasklist, add slidingItem, ionSwipe effect
+add task.ts
+using ionic native dialogs, test in android, ios and browser
 
 $ git tag -a s3_tasklist_slidingItem -m "tasklist slidingItem" HEAD
+$ npm install --save @ionic-native/dialogs
 $ git push origin tag s3_tasklist_slidingItem
 ```

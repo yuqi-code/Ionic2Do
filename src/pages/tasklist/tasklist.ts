@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController, ItemSliding } from 'ionic-angular';
+import { Task } from './task'
+import { AngularFire } from "angularfire2";
+import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'tasklist.html'
 })
 export class TaskListPage {
-  tasks: Array<any> = [];
+  tasks: FirebaseListObservable<any[]>;
 
-  constructor(public navCtrl: NavController) {
-    this.tasks = [
-      {title: 'Milk', status: 'open'},
-      {title: 'Eggs', status: 'open'},
-      {title: 'Syrup', status: 'open'},
-      {title: 'Pancake Mix', status: 'open'},
-    ];
+  constructor(public navCtrl: NavController, public af: AngularFire) {
+    this.tasks = af.database.list('/tasks');
   }
 
   addItem() {
@@ -24,17 +22,13 @@ export class TaskListPage {
     }
   }
 
-  markAsDone(slidingItem: ItemSliding, task: any) {
-    task.status = "done";
+  markAsDone(slidingItem: ItemSliding, task: Task) {
+    this.tasks.update(task.$key, { status: 'done' });
     slidingItem.close();
   }
 
-  removeTask(slidingItem: ItemSliding,task: any) {
-    task.status = "removed";
-    let index = this.tasks.indexOf(task);
-    if(index > -1) {
-      this.tasks.splice(index, 1);
-    }
+  removeTask(slidingItem: ItemSliding, task: Task) {
+    this.tasks.remove(task.$key);
     slidingItem.close();
   }
 }

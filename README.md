@@ -48,3 +48,15 @@ update tasklist, add slidingItem
 $ git tag -a s3_tasklist_slidingItem -m "tasklist slidingItem" HEAD
 $ git push origin tag s3_tasklist_slidingItem
 ```
+
+*s4_firebase
+```bash
+add task.ts
+save data to a online firebase dataabase.
+
+$ npm install firebase  --save
+$ npm install angularfire2@2.0.0-beta.8 --save
+$ npm install @ionic/app-scripts@latest
+$ npm install @angular/http --save
+
+```

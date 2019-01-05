@@ -15,15 +15,15 @@
   <ion-list>
     <!--<ion-item *ngFor="let task of tasks">{{task.title}}</ion-item>-->
 
-    <ion-item-sliding *ngFor="let task of tasks" #slidingItem>
+    <ion-item-sliding *ngFor="let task of tasks | async" #slidingItem>
       <ion-item [ngClass]="{taskDone: task.status == 'done'}">
         {{task.title}}
       </ion-item>
-      <ion-item-options side="right">
+      <ion-item-options side="right" (ionSwipe)="removeTask(slidingItem, task)">
         <button ion-button icon-only (click)="markAsDone(slidingItem, task)" color="secondary">
           <ion-icon name="checkmark"></ion-icon>
         </button>
-        <button ion-button icon-only (click)="removeTask(slidingItem, task)" color="danger">
+        <button ion-button icon-only expandable (click)="removeTask(slidingItem, task)" color="danger">
           <ion-icon name="trash"></ion-icon>
         </button>
       </ion-item-options>
